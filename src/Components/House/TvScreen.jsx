@@ -2,7 +2,6 @@ import { useRef, useMemo } from "react"
 import { TextureLoader, Uniform } from 'three'
 import { useLoader, useFrame } from "@react-three/fiber"
 import { Html } from "@react-three/drei"
-import { Html } from "@react-three/drei"
 
 import vertexShader from '../../shaders/tvnoise/vertex.glsl'
 import fragmentShader from '../../shaders/tvnoise/fragment.glsl'
