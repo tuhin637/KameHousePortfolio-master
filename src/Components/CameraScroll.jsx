@@ -16,43 +16,51 @@ export default function CameraScroll(props) {
     const doorRef = useRef()
     const tlRef = useRef()
 
-    const reactTextRef = useRef()
-    const symfonyTextRef = useRef()
-    const threejsTextRef = useRef()
-    const blenderTextRef = useRef()
+    // --- Skill Mugs (Kitchen) ---
+    const reactTextRef = useRef()        // → HTML & CSS
+    const symfonyTextRef = useRef()      // → PHP
+    const threejsTextRef = useRef()      // → JavaScript
+    const blenderTextRef = useRef()      // → MySQL
 
+    // --- Skill Soaps (Bathroom) ---
     const pythonTextRef = useRef()
     const htmlTextRef = useRef()
     const cssTextRef = useRef()
     const javascriptTextRef = useRef()
 
+    // --- Research / Thesis ---
     const threejsCertificationTextRef1 = useRef()
     const threejsCertificationTextRef2 = useRef()
 
-    const dut1TextRef = useRef()
+    // --- Education (Trophies) ---
+    const dut1TextRef = useRef()   // SSC
     const dut2TextRef = useRef()
     const dut3TextRef = useRef()
 
-    const licence1TextRef = useRef()
+    const licence1TextRef = useRef()  // HSC
     const licence2TextRef = useRef()
     const licence3TextRef = useRef()
 
-    const master1TextRef = useRef()
+    const master1TextRef = useRef()   // BSc CSE
     const master2TextRef = useRef()
     const master3TextRef = useRef()
 
+    // --- Project: TasteKart (ShaderTab area) ---
     const tabShader1TextRef = useRef()
     const tabShader2TextRef = useRef()
 
-
+    // --- Project: Library Management (Particles area) ---
     const particlesShaderTextRef = useRef()
 
+    // --- Project: ShopHub (Vinyl area) ---
     const vinyls1TextRef = useRef()
     const vinyls2TextRef = useRef()
     
+    // --- Project: BrewLab + BirdScape (Sports area) ---
     const sport1TextRef = useRef()
     const sport2TextRef = useRef()
 
+    // --- Final screen ---
     const seeyouTextRef = useRef()
 
     const [progress, setProgress] = useState(1)
@@ -71,12 +79,10 @@ export default function CameraScroll(props) {
         tlRef.current.to(
             camera.position,
             {
-                
                 duration: 2,
                 x: 7.7,
                 y: 3,
-                z: -2.5,     
-     
+                z: -2.5,
             },           
         ) 
         tlRef.current.to(
@@ -88,17 +94,17 @@ export default function CameraScroll(props) {
             
             }, "<60%"           
         ) 
-        //OPEN DOOR
+
+        // OPEN DOOR
         tlRef.current.to(
             doorRef.current.rotation,
             {
                 duration: 2,
-                y: -Math.PI/2,
-                         
+                y: -Math.PI/2,        
             },           
         )      
 
-        //FO THROUGH THE DOOR
+        // GO THROUGH THE DOOR
         tlRef.current.to(
             camera.position,
             {
@@ -107,7 +113,7 @@ export default function CameraScroll(props) {
             }
         )
 
-        //GO TO REACT MUG
+        // GO TO MUG 1 → HTML & CSS
         tlRef.current.to(
             camera.position,
             {
@@ -117,7 +123,7 @@ export default function CameraScroll(props) {
                 z: 0.3,
             },
         )
-         tlRef.current.to(
+        tlRef.current.to(
             camera.rotation,
             {          
                 duration: 2,     
@@ -133,10 +139,8 @@ export default function CameraScroll(props) {
                 opacity: 1,
             },"<40%"
         )
-       
-       
 
-        // GO TO SYMFONY/THREEJS MUG
+        // GO TO MUG 2 & 3 → PHP + JavaScript
         tlRef.current.to(
             camera.position,
             {
@@ -159,7 +163,7 @@ export default function CameraScroll(props) {
             }, "<"            
         )
 
-        //GO TO BLENDER MUG
+        // GO TO MUG 4 → MySQL
         tlRef.current.to(
             camera.position,
             {
@@ -169,7 +173,6 @@ export default function CameraScroll(props) {
                 z: 2.4,
             }
         )
-        
         tlRef.current.to(
             camera.rotation,
             {          
@@ -187,7 +190,7 @@ export default function CameraScroll(props) {
             },"<40%"
         )
 
-        //GO IN BATHROOM
+        // GO IN BATHROOM
         tlRef.current.to(
             camera.position,
             {
@@ -208,7 +211,7 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-        //GO TO PYTHON SOAP
+        // GO TO PYTHON SOAP
         tlRef.current.to(
             camera.position,
             {
@@ -234,7 +237,8 @@ export default function CameraScroll(props) {
                 opacity: 1,
             },"<40%"
         )
-        //GO TO HTML SOAP
+
+        // GO TO HTML SOAP
         tlRef.current.to(
             camera.position,
             {
@@ -261,8 +265,8 @@ export default function CameraScroll(props) {
             },"<40%"
         )
 
-        //GO TO CSS SOAP
-         tlRef.current.to(
+        // GO TO CSS SOAP
+        tlRef.current.to(
             camera.position,
             {
                 duration: 2,
@@ -288,7 +292,7 @@ export default function CameraScroll(props) {
             },"<40%"
         )
 
-        //GO TO JS SOAP
+        // GO TO JS SOAP
         tlRef.current.to(
             camera.position,
             {
@@ -315,8 +319,8 @@ export default function CameraScroll(props) {
             },"<40%"
         )
 
-        //EXIT BATHROOM
-         tlRef.current.to(
+        // EXIT BATHROOM
+        tlRef.current.to(
             camera.position,
             {
                 duration: 2,
@@ -355,9 +359,8 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-
-        //GO TO THEEJS JOURNEY CERTIFICATION 
-         tlRef.current.to(
+        // GO TO THESIS / RESEARCH AREA
+        tlRef.current.to(
             camera.position,
             {
                 duration: 2,
@@ -388,7 +391,6 @@ export default function CameraScroll(props) {
                 opacity: 1,
             },"<%"     
         ) 
-        
 
         // GO TO THE STAIR
         tlRef.current.to(
@@ -401,7 +403,7 @@ export default function CameraScroll(props) {
             }
         ) 
 
-        //GO TO TROPHEES : first text
+        // TROPHY 1: SSC
         tlRef.current.to(
             camera.position,
             {
@@ -430,8 +432,8 @@ export default function CameraScroll(props) {
             },"<"     
         )  
 
-         //GO TO TROPHEES : second text
-         tlRef.current.to(
+        // TROPHY 2: HSC
+        tlRef.current.to(
             camera.position,
             {
                 duration: 2,
@@ -459,8 +461,7 @@ export default function CameraScroll(props) {
             },"<"     
         )  
 
-
-        //GO TO TROPHEES : third text
+        // TROPHY 3: BSc CSE
         tlRef.current.to(
             camera.position,
             {
@@ -489,8 +490,7 @@ export default function CameraScroll(props) {
             },"<"     
         )  
 
-
-        //GO NEXT FLOOR
+        // GO NEXT FLOOR
         tlRef.current.to(
             camera.position,
             {
@@ -511,7 +511,7 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-        //GO TO THE BEDROOM
+        // GO TO THE BEDROOM
         tlRef.current.to(
             camera.position,
             {
@@ -532,8 +532,7 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-        //GO TO SHADER PAINT
-
+        // PROJECT 1: TasteKart (ShaderTab wall area)
         tlRef.current.to(
             camera.position,
             {
@@ -566,7 +565,7 @@ export default function CameraScroll(props) {
             },"<"     
         )  
 
-        //GO TO SHADER CLOUD
+        // PROJECT 2: Library Management System (Particles area)
         tlRef.current.to(
             camera.position,
             {
@@ -593,7 +592,7 @@ export default function CameraScroll(props) {
             },"<40%"     
         ) 
 
-        //GO TO VINYL
+        // PROJECT 3: ShopHub (Vinyl area)
         tlRef.current.to(
             camera.position,
             {
@@ -616,7 +615,7 @@ export default function CameraScroll(props) {
             },"<"     
         ) 
 
-        //GO TO BOXING BAG
+        // PROJECT 4: BrewLab + BirdScape (Sports area)
         tlRef.current.to(
             camera.position,
             {
@@ -649,7 +648,7 @@ export default function CameraScroll(props) {
             },"<"     
         ) 
 
-        //GO TO FOOTBALL BALL
+        // EXPLORE BEDROOM MORE
         tlRef.current.to(
             camera.position,
             {
@@ -670,7 +669,7 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-        //GO TO THE STAIRS
+        // GO TO THE STAIRS
         tlRef.current.to(
             camera.position,
             {
@@ -691,7 +690,7 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-        //DOWN THE STAIRS
+        // DOWN THE STAIRS
         tlRef.current.to(
             camera.position,
             {
@@ -712,7 +711,7 @@ export default function CameraScroll(props) {
             }, "<"          
         ) 
 
-        //GO TO TV
+        // GO TO TV (Final Screen)
         tlRef.current.to(
             camera.position,
             {
@@ -739,17 +738,16 @@ export default function CameraScroll(props) {
             },"<40%"     
         ) 
 
-        //ZOOM ON TV SCREEN
+        // ZOOM ON TV SCREEN
         tlRef.current.to(
             camera.position,
             {
                 duration: 2,
                 x: 0.6,
-                y: 2.35 ,
+                y: 2.35,
                 z: -2.8,
             }
         )
-
         tlRef.current.to(
             { value: 1 },
             {
@@ -787,6 +785,9 @@ export default function CameraScroll(props) {
 
         <TvScreen progress={progress} opacity={opacity}/>      
 
+        {/* ===== KITCHEN MUGS - SKILL LABELS ===== */}
+
+        {/* Mug 1: HTML & CSS */}
         <Text
             ref={reactTextRef}
             font="./fonts/Bangers.ttf"
@@ -796,9 +797,10 @@ export default function CameraScroll(props) {
             color="#2d1d04"
             material-opacity={0}
         >
-            REACT
+            HTML & CSS
         </Text>
 
+        {/* Mug 2: JavaScript */}
         <Text
             ref={threejsTextRef}
             font="./fonts/Bangers.ttf"
@@ -808,21 +810,23 @@ export default function CameraScroll(props) {
             color="#2d1d04"
             material-opacity={0}
         >
-            ThreeJS
+            JavaScript
         </Text>
 
+        {/* Mug 3: PHP */}
         <Text
             ref={symfonyTextRef}
             font="./fonts/Bangers.ttf"
-            position={[3.5, 3.85 , 3.3]}
+            position={[3.5, 3.85, 3.3]}
             fontSize={0.1}
             rotation-y={Math.PI}
             color="#2d1d04"
             material-opacity={0}
         >
-            Symfony
+            PHP
         </Text>
 
+        {/* Mug 4: MySQL */}
         <Text
             ref={blenderTextRef}
             font="./fonts/Bangers.ttf"
@@ -832,9 +836,12 @@ export default function CameraScroll(props) {
             color="#2d1d04"
             material-opacity={0}
         >
-            Blender
+            MySQL
         </Text>
 
+        {/* ===== BATHROOM SOAPS - SKILL LABELS ===== */}
+
+        {/* Soap: Python */}
         <Text
             ref={pythonTextRef}
             font="./fonts/Bangers.ttf"
@@ -847,6 +854,7 @@ export default function CameraScroll(props) {
             Python
         </Text>
 
+        {/* Soap: HTML */}
         <Text
             ref={htmlTextRef}
             font="./fonts/Bangers.ttf"
@@ -859,6 +867,7 @@ export default function CameraScroll(props) {
             HTML
         </Text>
 
+        {/* Soap: CSS */}
         <Text
             ref={cssTextRef}
             font="./fonts/Bangers.ttf"
@@ -871,6 +880,7 @@ export default function CameraScroll(props) {
             CSS
         </Text>
 
+        {/* Soap: JavaScript */}
         <Text
             ref={javascriptTextRef}
             font="./fonts/Bangers.ttf"
@@ -883,32 +893,38 @@ export default function CameraScroll(props) {
             JavaScript
         </Text>
 
-        <group >
+        {/* ===== THESIS / RESEARCH ===== */}
+        <group>
             <Text
                 ref={threejsCertificationTextRef1}
                 font="./fonts/Bangers.ttf"
                 position={[-0.5, 3.1, -1.4]}
-                fontSize={0.1}
+                fontSize={0.07}
                 rotation-y={Math.PI/2}
                 color="#2d1d04"
+                maxWidth={0.7}
                 material-opacity={0}
             >
-                THREEJS CERTIFICATION
+                THESIS: HEART DISEASE PREDICTION
             </Text>
             <Text
                 ref={threejsCertificationTextRef2}
                 font="./fonts/Bangers.ttf"
-                position={[-0.5, 3.05, -1.7]}
-                fontSize={0.02}
+                position={[-0.5, 3.0, -1.6]}
+                fontSize={0.025}
                 rotation-y={Math.PI/2}
                 color="#2d1d04"
+                maxWidth={0.7}
                 material-opacity={0}
             >
-                BY BRUNO SIMON
+                Using Machine Learning | Daffodil International University
             </Text>
         </group>
 
-         <group>
+        {/* ===== EDUCATION TROPHIES ===== */}
+
+        {/* Trophy 1: SSC */}
+        <group>
             <Text
                 ref={dut1TextRef}
                 font="./fonts/Bangers.ttf"
@@ -920,35 +936,35 @@ export default function CameraScroll(props) {
                 material-side={FrontSide}
                 material-opacity={0}
             >
-            Higher National Diploma in Computer Sciences
+                Secondary School Certificate (SSC)
             </Text>
             <Text
                 ref={dut2TextRef}
                 font="./fonts/Bangers.ttf"
-                position={[-1.3, 3, -2.71]}
-                fontSize={0.02}
+                position={[-1.3, 3.0, -2.71]}
+                fontSize={0.022}
                 rotation-y={Math.PI/2}
                 color="#f4eadb"
                 material-side={FrontSide}
                 material-opacity={0}
             >
-                (DUT informatique)
+                GPA: 4.95 / 5.00
             </Text>
-
-             <Text
+            <Text
                 ref={dut3TextRef}
                 font="./fonts/Bangers.ttf"
-                position={[-1.3, 3, -3]}
-                fontSize={0.02}
+                position={[-1.3, 3.0, -3.0]}
+                fontSize={0.022}
                 rotation-y={Math.PI/2}
                 color="#f4eadb"
                 material-side={FrontSide}
                 material-opacity={0}
             >
-                University of La Rochelle
+                Ranisankoil Pilot Boys High School | 2017
             </Text>
         </group>
 
+        {/* Trophy 2: HSC */}
         <group>
             <Text
                 ref={licence1TextRef}
@@ -961,35 +977,35 @@ export default function CameraScroll(props) {
                 material-side={FrontSide}
                 material-opacity={0}
             >
-            Bachelor’s degree in Computer Sciences
+                Higher Secondary Certificate (HSC)
             </Text>
             <Text
                 ref={licence2TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[-2.4, 3.35, -3.3]}
-                fontSize={0.02}
+                fontSize={0.022}
                 rotation-y={Math.PI/2}
                 color="#f4eadb"
                 material-side={FrontSide}
                 material-opacity={0}
             >
-                (Licence informatique)
+                GPA: 3.83 / 5.00
             </Text>
-
-             <Text
+            <Text
                 ref={licence3TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[-2.4, 3.35, -3.55]}
-                fontSize={0.02}
+                fontSize={0.022}
                 rotation-y={Math.PI/2}
                 color="#f4eadb"
                 material-side={FrontSide}
                 material-opacity={0}
             >
-                University of La Rochelle
+                Thakurgaon Government College | 2019
             </Text>
         </group>
 
+        {/* Trophy 3: BSc CSE */}
         <group>
             <Text
                 ref={master1TextRef}
@@ -1002,35 +1018,35 @@ export default function CameraScroll(props) {
                 material-side={FrontSide}
                 material-opacity={0}
             >
-            Master’s degree in Computer Sciences (In progress...)
+                BSc in Computer Science & Engineering
             </Text>
             <Text
                 ref={master2TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[-3.6, 3.9, -2.85]}
-                fontSize={0.02}
+                fontSize={0.022}
                 rotation-y={Math.PI/2}
                 color="#f4eadb"
                 material-side={FrontSide}
                 material-opacity={0}
             >
-                (Master informatique)
+                CGPA: 3.11 / 4.00
             </Text>
-
-             <Text
+            <Text
                 ref={master3TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[-3.6, 3.9, -3.45]}
-                fontSize={0.02}
+                fontSize={0.022}
                 rotation-y={Math.PI/2}
                 color="#f4eadb"
                 material-side={FrontSide}
                 material-opacity={0}
             >
-                University of Bordeaux
+                Daffodil International University | 2025
             </Text>
         </group>
 
+        {/* ===== PROJECT 1: TasteKart ===== */}
         <group>
             <Text
                 ref={tabShader1TextRef}
@@ -1041,36 +1057,36 @@ export default function CameraScroll(props) {
                 maxWidth={1}
                 material-opacity={0}
             >
-                hypnotizing shader
-             </Text>
-
-             <Text
+                TasteKart - Food Delivery App
+            </Text>
+            <Text
                 ref={tabShader2TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[0, 5.38, -2.1]}
-                fontSize={0.02}
+                fontSize={0.022}
                 color="#f4eadb"
-                maxWidth={1}
+                maxWidth={1.2}
                 material-opacity={0}
             >
-                ...using GLSL
-             </Text>
-
+                HTML · CSS · JavaScript · PHP · MySQL | Full-Stack
+            </Text>
         </group>
 
+        {/* ===== PROJECT 2: Library Management ===== */}
         <Text
             ref={particlesShaderTextRef}
             font="./fonts/Bangers.ttf"
             position={[3.3, 4.8, -1.8]}
-            fontSize={0.07}
+            fontSize={0.055}
             rotation-y={3*Math.PI/2}
             color="#f4eadb"
-            maxWidth={1}
+            maxWidth={1.1}
             material-opacity={0}
         >
-            Particles Morphing
+            Library Management System (AI Features)
         </Text>
 
+        {/* ===== PROJECT 3: ShopHub ===== */}
         <group>       
             <Text
                 ref={vinyls1TextRef}
@@ -1082,50 +1098,51 @@ export default function CameraScroll(props) {
                 maxWidth={1}
                 material-opacity={0}
             >
-                i love music ...
+                ShopHub - E-Commerce Platform
             </Text>
-
             <Text
                 ref={vinyls2TextRef}
                 font="./fonts/Bangers.ttf"
-                position={[3.3, 5.15, -0.]}
-                fontSize={0.02}
+                position={[3.3, 5.15, -0.0]}
+                fontSize={0.022}
                 rotation-y={3*Math.PI/2}
                 color="#f4eadb"
                 maxWidth={1}
                 material-opacity={0}
             >
-                I have a pretty cool vinyls collection
+                HTML5 · CSS3 · JavaScript | Responsive Design
             </Text>
         </group>
 
+        {/* ===== PROJECTS 4 & 5: BrewLab + BirdScape ===== */}
         <group>
             <Text
                 ref={sport1TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[0.2, 5, 0.7]}
-                fontSize={0.07}
+                fontSize={0.06}
                 rotation-y={7*Math.PI/6}
                 color="#f4eadb"
                 maxWidth={1}
                 material-opacity={0}
             >
-                I like sports
+                BrewLab & BirdScape
             </Text>
             <Text
                 ref={sport2TextRef}
                 font="./fonts/Bangers.ttf"
                 position={[0.2, 4.95, 0.7]}
-                fontSize={0.02}
+                fontSize={0.022}
                 rotation-y={7*Math.PI/6}
                 color="#f4eadb"
                 maxWidth={1}
                 material-opacity={0}                
             >
-                I practice boxing
+                Coffee Shop Landing Page & Interactive Photo Carousel
             </Text>
         </group>
 
+        {/* ===== FINAL SCREEN ===== */}
         <Text
             ref={seeyouTextRef}
             font="./fonts/Bangers.ttf"
