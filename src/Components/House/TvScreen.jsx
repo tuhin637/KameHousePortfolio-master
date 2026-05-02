@@ -1,9 +1,56 @@
 import { useRef, useMemo } from "react" 
 import { TextureLoader, Uniform } from 'three'
 import { useLoader, useFrame } from "@react-three/fiber"
+import { Html } from "@react-three/drei"
+import { Html } from "@react-three/drei"
 
 import vertexShader from '../../shaders/tvnoise/vertex.glsl'
 import fragmentShader from '../../shaders/tvnoise/fragment.glsl'
+
+const PROJECTS = [
+    {
+        title: "TasteKart",
+        desc: "Online Food Delivery Platform",
+        tech: "HTML · CSS · JS · PHP · MySQL",
+        live: "http://tastekart.lovestoblog.com/",
+        github: "https://github.com/tuhin637/Tastekart",
+    },
+    {
+        title: "Library Management",
+        desc: "System with AI Features",
+        tech: "PHP · MySQL · HTML · CSS · JS",
+        live: "http://librarymanagementsystem.gamer.gd/",
+        github: "https://github.com/tuhin637/Library-management-System",
+    },
+    {
+        title: "ShopHub",
+        desc: "E-Commerce Platform",
+        tech: "HTML5 · CSS3 · JavaScript",
+        live: "https://shop-hub-e-commerce-platform.vercel.app/",
+        github: "https://github.com/tuhin637/ShopHub--E-Commerce-Platform",
+    },
+    {
+        title: "BrewLab",
+        desc: "Coffee Shop Landing Page",
+        tech: "HTML5 · CSS3 · JavaScript",
+        live: "https://brewlab-seven.vercel.app/",
+        github: "https://github.com/tuhin637/brewlab",
+    },
+    {
+        title: "BirdScape",
+        desc: "Interactive Photo Carousel",
+        tech: "HTML5 · CSS3 · JavaScript",
+        live: "https://bird-scape-interactive-photo-carous.vercel.app/",
+        github: "https://github.com/tuhin637/BirdScape---Interactive-Photo-Carousel",
+    },
+    {
+        title: "Heart Disease Prediction",
+        desc: "ML Thesis Web App",
+        tech: "Python · Scikit-learn · XGBoost",
+        live: "https://heart-disease-website-ou9g.vercel.app/",
+        github: "https://github.com/tuhin637",
+    },
+]
 
 export default function TvScreen(props)
 {
@@ -43,6 +90,8 @@ export default function TvScreen(props)
             window.open(url, "_blank");
         }
     };
+
+    const panelOpacity = Math.max(0, (props.opacity - 0.5) * 2);
 
     return <>
 
@@ -115,6 +164,122 @@ export default function TvScreen(props)
             </mesh>
 
         </group>
+
+        {/* ─── Projects Panel ───────────────────────────────── */}
+        <Html
+            position={[0.61, 1.72, -3.49]}
+            rotation-y={0}
+            transform
+            occlude={false}
+            style={{
+                opacity: panelOpacity,
+                transition: "opacity 0.3s",
+                pointerEvents: panelOpacity > 0.5 ? "auto" : "none",
+            }}
+        >
+            <div style={{
+                width: "3800px",
+                background: "rgba(18, 10, 4, 0.95)",
+                border: "1px solid rgba(255,200,100,0.2)",
+                borderRadius: "80px",
+                padding: "90px 100px",
+                fontFamily: "sans-serif",
+                color: "#f4eadb",
+                boxShadow: "0 0 200px rgba(0,0,0,0.9)",
+                transform: "scale(0.00017)",
+                transformOrigin: "top center",
+            }}>
+                {/* Header */}
+                <div style={{
+                    textAlign: "center",
+                    fontSize: "130px",
+                    fontFamily: "'Bangers', cursive",
+                    letterSpacing: "15px",
+                    color: "#ffd580",
+                    marginBottom: "80px",
+                    borderBottom: "4px solid rgba(255,200,100,0.3)",
+                    paddingBottom: "50px",
+                }}>
+                    🗂 MY PROJECTS
+                </div>
+
+                {/* Project Cards Grid */}
+                <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gap: "60px",
+                }}>
+                    {PROJECTS.map((p, i) => (
+                        <div key={i} style={{
+                            background: "rgba(255,255,255,0.04)",
+                            border: "2px solid rgba(255,200,100,0.25)",
+                            borderLeft: "8px solid rgba(255,200,100,0.6)",
+                            borderRadius: "40px",
+                            padding: "60px 70px",
+                        }}>
+                            <div style={{
+                                fontSize: "110px",
+                                fontFamily: "'Bangers', cursive",
+                                color: "#ffd580",
+                                marginBottom: "20px",
+                                letterSpacing: "5px",
+                            }}>
+                                {p.title}
+                            </div>
+                            <div style={{
+                                fontSize: "75px",
+                                color: "#ddd",
+                                marginBottom: "25px",
+                            }}>
+                                {p.desc}
+                            </div>
+                            <div style={{
+                                fontSize: "65px",
+                                color: "#999",
+                                marginBottom: "60px",
+                                lineHeight: 1.4,
+                            }}>
+                                {p.tech}
+                            </div>
+                            <div style={{ display: "flex", gap: "50px", flexWrap: "wrap" }}>
+                                <a
+                                    href={p.live}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        fontSize: "65px",
+                                        background: "#ffd580",
+                                        color: "#1a0e00",
+                                        padding: "25px 70px",
+                                        borderRadius: "30px",
+                                        textDecoration: "none",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    🔗 Live Demo
+                                </a>
+                                <a
+                                    href={p.github}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        fontSize: "65px",
+                                        background: "rgba(255,255,255,0.08)",
+                                        color: "#f4eadb",
+                                        padding: "25px 70px",
+                                        borderRadius: "30px",
+                                        textDecoration: "none",
+                                        border: "2px solid rgba(255,255,255,0.2)",
+                                    }}
+                                >
+                                    ⌥ GitHub
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </Html>
 
     </>
 }
